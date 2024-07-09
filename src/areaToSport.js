@@ -12,7 +12,6 @@ export default async function areaToSport(spot) {
         const response = await fetch(apiUrl);
         var data = await response.json();
     } catch (error) {
-        console.error('Error fetching competition sites:', error);
         throw error;
     }
 
