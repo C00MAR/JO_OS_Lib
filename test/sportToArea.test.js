@@ -1,7 +1,7 @@
 import { sportToArea } from '../src/sportToArea';
 
 global.fetch = jest.fn((url) => {
-    if (url.includes('refine.sports=Unknown')) {
+    if (url.includes('Unknown')) {
         return Promise.resolve({
             json: () => Promise.resolve({
                 records: []
@@ -59,7 +59,7 @@ describe('sportToArea', () => {
         const areas = await sportToArea(sport);
         expect(areas).toEqual(expectedAreas);
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?where=%Unknow%22");
+        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?where=%22Unknown%22");
     });
 
     it('should return an empty array if the sport is not provided', async () => {

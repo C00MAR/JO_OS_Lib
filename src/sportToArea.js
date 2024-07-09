@@ -8,7 +8,7 @@ export async function sportToArea(sport) {
     if (!sport) return [];
 
     const API = "https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records";
-    const filter = "?where=%" + sport + "%22";
+    const filter = "where=%22" + sport + "%22";
 
     const request = `${API}?${filter}`;
 
