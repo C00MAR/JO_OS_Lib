@@ -49,7 +49,7 @@ describe('sportToArea', () => {
         const areas = await sportToArea(sport);
         expect(areas).toEqual(expectedAreas);
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?refine.sports=Basketball");
+        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?where=%22Basketball%22");
     });
 
     it('should return an empty array if the sport is not found', async () => {
@@ -59,7 +59,7 @@ describe('sportToArea', () => {
         const areas = await sportToArea(sport);
         expect(areas).toEqual(expectedAreas);
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?refine.sports=Unknown");
+        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?where=%Unknow%22");
     });
 
     it('should return an empty array if the sport is not provided', async () => {
