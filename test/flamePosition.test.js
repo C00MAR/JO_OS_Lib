@@ -1,4 +1,4 @@
-import { flamePosition } from "../src/flameposition";
+import { flamePosition } from "../src/flamePosition";
 
 global.fetch = jest.fn((url) => {
     return Promise.resolve({
