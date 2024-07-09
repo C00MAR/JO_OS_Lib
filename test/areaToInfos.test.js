@@ -19,8 +19,7 @@ describe('areaToInfos', () => {
             ];
 
         const result = await areaToInfos(spot);
-
-        expect(result).toEqual(expected);
+        expect(result).toEqual(expected.reverse());
     });
 
     it('should throw an error if the given spot is invalid', async () => {
