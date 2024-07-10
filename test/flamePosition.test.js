@@ -29,6 +29,6 @@ describe('flamePosition', () => {
         const position = await flamePosition();
         expect(position).toEqual(expectedPosition);
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-flamme-olympique/records?where=%222024-07-09order_by=%22start_datetime%20DESC%22%22&limit=1");
+        expect(fetch).toHaveBeenCalledWith("https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-flamme-olympique/records?where=%22" + new Date().toISOString().split('T')[0] + "order_by=%22start_datetime%20DESC%22%22&limit=1");
     });
 });
